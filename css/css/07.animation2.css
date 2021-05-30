@@ -1,0 +1,94 @@
+/* html {
+	border: 10px solid orange;
+	min-height: 100%;
+	height: 100%;
+}
+
+body {
+	border: 10px solid green;
+	height: 100%;
+	padding: 10%;
+}
+
+.wrapper {
+	width: 100%;
+	border: 10px solid red;
+	margin: 10%;
+	height: 80%;
+}
+
+.box {
+	width: 100px;
+	height: 100px;
+	background-color: cadetblue;
+} */
+
+/* 
+단위 : vw/vh 뷰포트 ..
+*/
+
+
+/* htm {}
+
+body {}
+
+.wrapper {
+	border: 10px solid red;
+	height: 100vh;
+}
+
+.box {
+	border: 10px solid blue;
+} */
+
+
+.wrapper {
+	width: calc(100% - 200px);
+	height: calc(100vh - 200px);
+	margin: 100px;
+	border: 10px solid red;
+	background-color: cadetblue;
+	position: relative;
+}
+
+.box {
+	width: 100px;
+	height: 100px;
+	background-color: cadetblue;
+	/* animation-name: boxAni; */
+	animation-name: bounceInUp;
+	animation-duration: s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+	animation-play-state: running;
+}
+
+.box :active
+
+.box2 {
+	width: 100px;
+	height: 100px;
+	background-color: crimson;
+	position: absolute;
+	top: calc(50% - 50px);
+	left: calc(50% - 50px);
+	animation-name: boxRotate;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes boxAni {
+	0% {transform: translate(0, 0);
+	25% {transform: translate(clac(100vw - 320px), 0);}
+	50% {transform: translate(clac(100vw - 320px), clac(100vh - 320px);}
+	75% {transform: translate(0, clac(100vh - 320px);}
+	100% {transform: translate(0, 0);}
+}
+
+@keyframes .boxRotate {
+	0% {transform: rotate(0);}
+	100% {transform: rotate(720deg);}
+}

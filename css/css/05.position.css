@@ -1,0 +1,43 @@
+body {
+	height: 10000px;
+}
+
+.wrapper {
+	max-width: 800px;
+	width: 800px;
+	height: 300px;
+	border: 10px solid red;
+	background-color: orange;
+	margin: 50px auto;
+	position: relative;
+	z-index: 1;
+}
+.box {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+}
+
+.wrapper1
+
+.box1 {
+	top: 30px;
+	left: 100px;
+	background-color: yellowgreen;
+	z-index: 20;
+}
+
+.box2 {
+	top: -30px;
+	left: 120px;
+	background-color: #32cd80;
+	z-index: 5;
+}
+
+.box3 {
+	top: 70px;
+	left: 180px;
+	background-color: #3268cd;
+	z-index: 10;
+}
+

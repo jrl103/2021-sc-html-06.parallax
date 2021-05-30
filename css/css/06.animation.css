@@ -1,0 +1,199 @@
+/* 
+장면전환    transition : 속성명 _ all .5s;
+변형        transform  : 속성명 _ rotate(30deg);
+이동        translate  : 속성값
+
+*/
+
+html,
+body {
+	height: 10000px;
+}
+
+.wrapper {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.title-wrapper {
+	padding: 50px 0 30px 0;
+	text-align: center;
+}
+
+.content-wrapper {
+	border: 2px solid yellowgreen;
+	padding: 50px;
+	margin: 30px auto;
+}
+
+
+.box h3 {
+	font-size: 48px;
+}
+
+.box1 {
+	border: 10px solid red;
+	padding: 50px;
+	background-color: blueviolet;
+	color: #fff;
+	display: inline-block;
+	transition: width 2s, background-color 5s;
+	width: 70%;
+}
+
+.box1:hover {
+	background-color: chartreuse;
+	width: 100%;
+}
+
+.box2 {
+	width: 100px;
+	height: 100px;
+	background-color: coral;
+	/* transform: translate(100px, 200px); */
+	/* translate 는 예외로 부모 기준이 아님
+      = translate의 % 는 본인 크기의 % */
+			transition: all 1s;
+			/* transform-origin: 200px center; */
+		}
+		
+		.content-wrapper:hover .box2 {
+			/* transform: translate(50%, 0); */
+			/* transform: rotateY(720deg); */
+			transform: scale(2.5);
+}
+
+.content-wrapper.bg-wrapper {
+	padding: 0;
+	position: relative;
+}
+
+.bg-wrapper h3.title {
+	font-size: 80px;
+	color: #f1ff28;
+	border: 1px solid red;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.header-wrapper {
+	margin: 50px 0;
+}
+
+.header-wrapper .navi-wrap {
+	text-align: center;
+}
+
+.header-wrapper .navi-wrap .navi {
+	display: inline-block;
+	padding: 16px 24px;
+/* 	overflow: hidden; */
+	cursor: pointer;
+	transition: all .5s;
+}
+
+.header-wrapper .navi-wrap .navi .bar {
+	height: 3px;
+	background-color: #072791;
+	margin-top: 12px;
+	transform: scaleX(0);
+	transition: transform .5s;
+	transform-origin: right center;
+	/* transition: all .5s; */
+}
+
+.header-wrapper .navi-wrap .navi:hover {
+	/* transform: translateY(-12px); */
+}
+
+
+.header-wrapper .navi-wrap .navi:hover .bar {
+	transform: translateX(1);
+	transform-origin: left center;
+}
+
+.img-wrapper {
+	transition: all .5s;
+	max-width: 300px;
+	margin: 50px auto;
+	overflow: hidden;
+}
+
+.img-wrapper img {
+	transition: all .5s;
+}
+
+.img-wrapper:hover {
+	border-radius: 40px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+}
+
+.img-wrapper:hover img {
+	transform: scale(1.2);
+}
+
+.pers-wrap {
+	width: 300px;
+	perspective: 300px;
+	position: relative;
+}
+
+.pers-wrap .box {
+	width: 100%;
+	background-color: rgba(0, 0, 0, .7);
+	color: #fff;
+	padding: 36px 16px;
+	position: absolute;
+	bottom: 0;
+	transition: all .5s;
+	transform-style: preserve-3d;
+	transform: rotateX(-180deg);
+	transform-origin: bottom;
+	opacity: 0;
+}
+
+.pers-wrap:hover .box {
+	transform: rotateX(0);
+	opacity: 1;
+}
+
+.skew-wrap {
+	width: 200px;
+	height: 200px;
+	position: relative;
+}
+
+.skew {
+	width: 200px;
+	height: 200px;
+	background-color: #693f08;
+	position: absolute;
+}
+
+.skew1 {
+	transform-origin: left;
+	transform: skewY(22.5deg);
+	z-index: 4;
+	
+}
+
+.skew2 {
+	left: 100%;
+	top: 41%;
+	transform-origin: left;
+	transform: skewY(-22.5deg);
+}
+
+.skew3 {
+	transform-origin: left;
+	transform: skewY(-22.5deg);
+}
+
+.skew4 {
+	left: 100%;
+	top: -41%;
+	transform-origin: left;
+	transform: skewY(22.5deg);
+}

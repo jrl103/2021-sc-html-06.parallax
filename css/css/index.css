@@ -1,0 +1,321 @@
+/* displat: inline인 태그는 width/height/margin-top/margin-bottom이 적용되지 않는다!
+그래서 위의 네개 속성을 주기 위해서는 display: inline-block을 적용한다  
+
+상속 가능한 속성 - 글씨 속성들
+- text-align, font-size, font-weight, letter-spacing, line-height ...
+*/
+
+
+/*************** 공통사항 *****************/
+body {
+	height: 10000px;
+}
+
+.wrapper {
+	max-width: 768px;
+	margin: auto;
+}
+
+h2.title {
+	font-size: 32px;
+	letter-spacing: 5px;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+h3.title {
+	font-style: italic;
+	color: #aaa;
+	text-align: center;
+	font-size: 15px;
+	margin-bottom: 16px;
+}
+
+p.content {
+	line-height: 1.5;
+	font-size: 15px;
+	text-align: justify;
+	margin-bottom: 16px;
+}
+
+section:not(.main-wrapper) {
+	padding: 100px 0;
+}
+
+/*************** header-wrapper *****************/
+.header-wrapper {
+	background-color: #000;
+	color: #fff;
+	position: fixed;
+	z-index: 99;
+	width: 100%;
+}
+
+.header-wrapper .navi-wrap {
+	float: left;
+}
+
+.header-wrapper .navi-wrap .navi {
+	float: left;
+	padding: 16px 24px;
+	cursor: pointer;
+	position: relative;
+	transition: all .75s;
+}
+
+.header-wrapper .navi-wrap .navi:hover {
+	color: #000;
+	background-color: #bbb;
+}
+
+.header-wrapper .navi-wrap .navi:hover>.sub-wrap {
+	display: block;
+}
+
+.header-wrapper .navi-wrap .navi > .sub-wrap {
+	background-color: #fff;
+	color: #000;
+	cursor: pointer;
+	position: absolute;
+	left: 0;
+	top: 48px;
+	display: none;
+	box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+}
+
+.header-wrapper .navi-wrap .navi>.sub-wrap > .sub {
+	padding: 12px 48px 12px 16px;
+}
+
+.header-wrapper .navi-wrap .navi:hover > .sub-wrap > .sub:hover {
+	background-color: #bbb;
+}
+
+.header-wrapper .search-wrap {
+	float: right;
+}
+
+.header-wrapper .search-wrap i {
+	padding: 16px;
+}
+
+.header-wrapper .search-wrap i:hover {
+	background-color: #f30;
+	cursor: pointer;
+}
+
+/*************** main-wrapper *****************/
+/* section.main-wrapper {padding: 100px;} */
+.main-wrapper {
+	padding: 40px 0 0 0;
+	border: 10px solid red;
+	position: relative;
+}
+
+.main-wrapper .title-wrap {
+	border: 10px solid green;
+	position: absolute;
+	bottom: 50px;
+	width: 100%;
+	color: #fff;
+	text-align: center;
+}
+
+.main-wrapper .title-wrap h2 {
+	font-size: 24px;
+	margin-bottom: 16px;
+}
+
+.main-wrapper .title-wrap h3 {
+	font-size: 16px;
+}
+
+/*************** band-wrapper *****************/
+.band-wrapper .member {
+	float: left;
+	width: 33.3333%;
+	padding: 48px;
+}
+
+.band-wrapper h4.title {
+	text-align: center;
+	margin-bottom: 16px;
+}
+
+.band-wrapper .member img {
+	border-radius: 6px;
+}
+
+/*************** tour-wrapper *****************/
+.tour-wrapper {
+	background-color: #000;
+}
+
+.tour-wrapper h2.title {
+	color: #fff;
+}
+
+.tour-wrapper .list-wrap {
+	background-color: #f5f5f5;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	margin-bottom: 24px;
+}
+
+.tour-wrapper .list-wrap .list {
+	padding: 16px;
+	border-bottom: 1px solid #ccc;
+}
+
+.tour-wrapper .list-wrap .list:not(:last-child) {
+	border-bottom: 1px solid #ccc;
+}
+
+.tour-wrapper .list-wrap .list .soldout {
+	background-color: #f30;
+	color: #fff;
+	padding: 3px 6px;
+	margin-left: 16px;
+}
+
+.tour-wrapper .list-wrap .list .count {
+	float: right;
+	background-color: black;
+	color: #fff;
+	padding: 8px;
+	border-radius: 50%;
+	margin-top: -8px;
+	padding: 3px 7px;
+}
+
+.tour-wrapper .city-wrap {
+	width: 102%;
+}
+
+.tour-wrapper .city-wrap .city {
+	width: 31.3333%;
+	float: left;
+	margin-right: 2%;
+}
+
+.tour-wrapper .city-wrap .img-wrap {
+	overflow: hidden;
+}
+
+.tour-wrapper .city-wrap .img-wrap img {
+	transition: all .75s;
+}
+
+.tour-wrapper .city-wrap .img-wrap:hover img {
+	opacity: .7;
+	transform: scale(1.1) rotate(10deg);
+}
+
+/* .tour-wrapper .list-wrap > :nth-child(1) {background-color: #f30;}
+.tour-wrapper .list-wrap > :nth-child(2) {background-color: green;}
+.tour-wrapper .list-wrap > :nth-child(3) {background-color: blue;}  */
+
+.tour-wrapper .city .desc-wrap {
+	background-color: #fff;
+	color: #000;
+	padding: 16px;
+	letter-spacing: -.5px;
+}
+
+.tour-wrapper .city .desc-wrap h4.title {
+	font-weight: bold;
+	margin-bottom: 16px;
+}
+
+.tour-wrapper .city .desc-wrap p.date {
+	color: #999;
+	margin-bottom: 16px;
+}
+
+.tour-wrapper .city .desc-wrap .bt-buy {
+	padding: 12px 16px;
+	background-color: #000;
+	color: #fff;
+}
+
+.tour-wrapper .city .desc-wrap .bt-buy .bt-buy:hover {
+	background-color: #ccc;
+	color: #000;
+}
+
+/*************** contact-wrapper *****************/
+.contact-wrapper .desc-wrapper {
+	padding: 32px 0;
+}
+
+.contact-wrapper .desc-wrapper>div {
+	width: 50%;
+	float: left;
+}
+
+.contact-wrapper .info-wrap {
+	font-size: 18px;
+}
+
+.contact-wrapper .info-wrap i {
+	width: 30px;
+}
+
+.contact-wrapper .info-wrap>* {
+	margin-bottom: 16px;
+}
+
+.contact-wrapper .mail-wrap input {
+	padding: 12px;
+}
+
+.contact-wrapper .mail-wrap input[name="name"] {
+	width: 49%;
+	float: left;
+}
+
+.contact-wrapper .mail-wrap input[name="email"] {
+	width: 49%;
+	float: right;
+}
+
+.contact-wrapper .mail-wrap input[name="msg"] {
+	width: 100%;
+	margin-top: 2%;
+}
+
+.contact-wrapper .mail-wrap .bt-send {
+	float: right;
+	margin-top: 2%;
+	background-color: #000;
+	color: #fff;
+	padding: 12px 16px;
+}
+
+.contact-wrapper .mail-wrap .bt-send:hover {
+	background-color: #ccc;
+	color: #000;
+}
+
+/*************** loc-wrapper *****************/
+.loc-wrapper img {
+	filter: grayscale(60%);
+}
+
+/* ie는 제외 */
+
+/*************** footer-wrapper *****************/
+.footer-wrapper {
+	text-align: center;
+	color: #777;
+}
+
+.footer-wrapper .sns-wrap {
+	font-size: 24px;
+	margin-bottom: 16px;
+}
+
+.footer-wrapper .sns-wrap a:hover {
+	opacity: .6;
+}
